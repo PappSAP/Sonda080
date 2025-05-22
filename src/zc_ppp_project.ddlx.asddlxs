@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { title: { value: 'Projid' },
+                  description: { value: 'ProjectName' } 
+                  }
+annotate entity ZCV_PPP_PROJECT with 
+{ 
+
+// Información del proyecto
+@UI.facet: [{ position: 10, label: 'Información del proyecto', type: #IDENTIFICATION_REFERENCE },
+            { position: 20, label: 'Habilidades',              type: #LINEITEM_REFERENCE, targetElement: '_skill' } 
+ ]
+
+// Info
+@UI.lineItem: [{ position: 10 }]
+@UI.identification: [{ position: 10 }]
+@EndUserText: { label: 'ID Empleado' }
+ Id;
+ 
+@UI.lineItem: [{ position: 20 }] 
+@UI.identification: [{ position: 20 }]
+@EndUserText: { label: 'Id Proyecto' }
+ Projid;
+ 
+@UI.lineItem: [{ position: 30 }] 
+@UI.identification: [{ position: 30 }]
+@EndUserText: { label: 'Nombre del proyecto' }
+ ProjectName;
+ 
+@UI.lineItem: [{ position: 40 }] 
+@UI.identification: [{ position: 40 }]
+@EndUserText: { label: 'Tipo de Proyecto' }
+ ProjectType;
+
+@UI.lineItem: [{ position: 50 }] 
+@UI.identification: [{ position: 50 }]
+@EndUserText: { label: 'Vigente' }
+ IsCurrent;
+
+@UI.lineItem: [{ position: 60 }] 
+@UI.identification: [{ position: 60 }]
+@EndUserText: { label: 'Duración' }
+ Duration;
+
+ 
+    
+}

@@ -1,0 +1,82 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:
+{
+    typeName: 'Empleado',
+    typeNamePlural: 'Empleados',
+    title: { value: 'Id' },
+    description: { value: 'Fullname'}
+}
+
+annotate entity ZCV_PPP_EMPLEADOS with
+{
+
+  --Facet Datos empleados
+  @UI.facet: [ { position: 10, label: 'Datos Empleado',  type: #IDENTIFICATION_REFERENCE },
+               { position: 20, label: 'Datos Adicionales',  type: #COLLECTION, id: 'ADIC' },
+                   { position: 21, label: 'Datos Contacto',   type: #FIELDGROUP_REFERENCE, targetQualifier: 'CONT', parentId: 'ADIC' },
+                   { position: 22, label: 'Datos Dirección',  type: #FIELDGROUP_REFERENCE, targetQualifier: 'ADDR', parentId: 'ADIC' },
+               { position: 40, label: 'Datos Proyectos', type: #LINEITEM_REFERENCE,   targetElement: '_proj' }
+             ]
+
+
+  -- List view  Principal
+  @UI.lineItem: [{ position: 10, label: 'Cod.Empleado' }]
+  @EndUserText: { label:'Id.Empleado', quickInfo: 'Código empleado' }
+  @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  Id;
+
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText: { label:'Nombre' }
+  @UI.identification: [{ position: 20 }]
+  Nombre;
+
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText: { label:'Apellido' }
+  @UI.identification: [{ position: 30 }]
+  Apellido;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.identification: [{ position: 40 }]
+  Sexo;
+
+  @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 50 }]
+  Cargo;
+
+  @UI.hidden: true
+  Fullname;
+
+  // Datos de Contacto
+  @UI.fieldGroup: [{ position: 10, qualifier: 'CONT'  }]
+  @EndUserText: { label:'Teléfono principal' }
+  PhoneNum;
+
+  @UI.fieldGroup: [{ position: 20,  qualifier: 'CONT' }]
+  @EndUserText: { label:'Teléfono alternativo' }
+  AltPhoneNum;
+
+  @UI.fieldGroup: [{ position: 30,  qualifier: 'CONT'  }]
+  @EndUserText: { label:'Correo principal' }
+  EmailId;
+
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'CONT'  }]
+  @EndUserText: { label:'Correo alternativo' }
+  AltEmailId;
+
+  // Datos Dirección
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'ADDR'  }]
+  @EndUserText: { label:'Calle' }
+  Street;
+
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'ADDR'  }]
+  @EndUserText: { label:'Ciudad' }
+  City;
+
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'ADDR'  }]
+  @EndUserText: { label:'Pais' }
+  Country;
+
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'Serivce definition Empleado'
+define service ZC_PPP_EMPLEADOS {
+  expose ZCV_PPP_EMPLEADOS;
+  expose ZCV_PPP_PROJECT;
+  expose ZCV_PPP_SKILL;
+}

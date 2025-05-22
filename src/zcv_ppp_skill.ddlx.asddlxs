@@ -1,0 +1,41 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { title: { value: 'Skillid' } }
+annotate entity ZCV_PPP_SKILL
+    with 
+{
+// Facet - Skills
+@UI.facet: [{ position: 10, label: 'Detalle habilidades', type: #IDENTIFICATION_REFERENCE } ]
+
+
+// Info
+@UI.lineItem: [{ position: 10 }]
+@UI.identification: [{ position: 10 }]
+@EndUserText: { label: 'ID Empleado' }
+ Id;
+ 
+@UI.lineItem: [{ position: 20 }] 
+@UI.identification: [{ position: 20 }]
+@EndUserText: { label: 'Id Proyecto' }
+ Projid;
+ 
+@UI.lineItem: [{ position: 30 }]
+@EndUserText: { label: 'Id Habilidad' }
+@UI.identification: [{ position: 30 }]
+ Skillid;
+ 
+@UI.lineItem: [{ position: 40 }]
+@EndUserText: { label: 'Nivel' } 
+@UI.identification: [{ position: 40 }]
+ SkillLevel;
+ 
+@UI.lineItem: [{ position: 50 }] 
+@EndUserText: { label: 'Primario ?' }
+@UI.identification: [{ position: 50 }]
+ IsPrimary;
+ 
+@UI.lineItem: [{ position: 60 }] 
+@EndUserText: { label: 'Certificado ?' }
+@UI.identification: [{ position: 60 }]
+ isCertified;
+    
+}
