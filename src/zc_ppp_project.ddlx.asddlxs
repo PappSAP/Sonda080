@@ -1,6 +1,6 @@
 @Metadata.layer: #CORE
 
-@UI.headerInfo: { title: { value: 'Projid' },
+@UI.headerInfo: { title: { value: 'Projid'  },
                   description: { value: 'ProjectName' } 
                   }
 annotate entity ZCV_PPP_PROJECT with 
