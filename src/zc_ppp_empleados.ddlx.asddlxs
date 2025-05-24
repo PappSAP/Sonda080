@@ -11,27 +11,33 @@ annotate entity ZCV_PPP_EMPLEADOS with
 {
 
   --Facet Datos empleados
-  @UI.facet: [ { position: 10, label: 'Datos Empleado',  type: #IDENTIFICATION_REFERENCE },
+  @UI.facet: [
+  -- Header
+  { position: 10, purpose: #HEADER, type: #DATAPOINT_REFERENCE, targetQualifier: '_HDR_1' },
+  -- Facets area
+               { position: 10, label: 'Datos Empleado',  type: #IDENTIFICATION_REFERENCE },
+-- Collection
                { position: 20, label: 'Datos Adicionales',  type: #COLLECTION, id: 'ADIC' },
                    { position: 21, label: 'Datos Contacto',   type: #FIELDGROUP_REFERENCE, targetQualifier: 'CONT', parentId: 'ADIC' },
                    { position: 22, label: 'Datos Dirección',  type: #FIELDGROUP_REFERENCE, targetQualifier: 'ADDR', parentId: 'ADIC' },
+-- Line item             
                { position: 40, label: 'Datos Proyectos', type: #LINEITEM_REFERENCE,   targetElement: '_proj' }
              ]
 
 
   -- List view  Principal
-  @UI.lineItem: [{ position: 10, label: 'Cod.Empleado' }]
-  @EndUserText: { label:'Id.Empleado', quickInfo: 'Código empleado' }
+  @UI.lineItem: [{ position: 10, label: 'Cod.Empleado', cssDefault.width: '8rem' }]
+  @EndUserText: { label:'Cod.Empleado', quickInfo: 'Código empleado' }
   @UI.selectionField: [{ position: 10 }]
   @UI.identification: [{ position: 10 }]
   Id;
 
-  @UI.lineItem: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20, cssDefault.width: '10rem' }]
   @EndUserText: { label:'Nombre' }
   @UI.identification: [{ position: 20 }]
   Nombre;
 
-  @UI.lineItem: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, cssDefault.width: '10rem' }]
   @EndUserText: { label:'Apellido' }
   @UI.identification: [{ position: 30 }]
   Apellido;
@@ -39,13 +45,15 @@ annotate entity ZCV_PPP_EMPLEADOS with
   @UI.lineItem: [{ position: 40 }]
   @UI.selectionField: [{ position: 30 }]
   @UI.identification: [{ position: 40 }]
+  @Consumption.valueHelpDefinition: [{ entity: {  name: 'ZIV_PPP_SEXO_VH', element: 'SexoId' } }]
   Sexo;
 
   @UI.lineItem: [{ position: 50 }]
   @UI.selectionField: [{ position: 20 }]
   @UI.identification: [{ position: 50 }]
   Cargo;
-
+ 
+  
   @UI.hidden: true
   Fullname;
 
@@ -74,9 +82,16 @@ annotate entity ZCV_PPP_EMPLEADOS with
   @UI.fieldGroup: [{ position: 40,  qualifier: 'ADDR'  }]
   @EndUserText: { label:'Ciudad' }
   City;
-
-  @UI.fieldGroup: [{ position: 40,  qualifier: 'ADDR'  }]
+  
+  @UI.lineItem: [{ position: 60 }] 
+  @UI.dataPoint: { qualifier: '_HDR_1', title: 'País :' }
+  @UI.fieldGroup: [{ position: 60,  qualifier: 'ADDR'  }]
   @EndUserText: { label:'Pais' }
+  @UI.selectionField: [{ position: 40 }]
+  @UI.identification: [{ position: 60 }]
+  //@Consumption.valueHelpDefinition: [{ entity: { name: 'I_CountryVH', element: 'Country'  }  }]       --Standar
+   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZIV_PPP_COUNTRY_VH', element: 'Country'  }  }] -- Custom 
+ 
   Country;
 
 }

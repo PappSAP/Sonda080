@@ -42,6 +42,5 @@ annotate entity ZCV_PPP_PROJECT with
 @EndUserText: { label: 'Duración' }
  Duration;
 
- 
     
 }
