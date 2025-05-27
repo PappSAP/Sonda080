@@ -22,7 +22,13 @@ composition [1..*] of ZCV_PPP_PROJECT as _proj
       /* Associations  Dirección*/
       _addr.Street,
       _addr.City,
+      @ObjectModel.text.element: [ 'CountryName' ]
       _addr.Country,
+      _addr.CountryName,
+      
+      @Semantics.imageUrl: true
+      _addr.CountryLogoUrl,
+      _addr.CountryWebLink,
       
       /* Composición  Proyectos*/
       _proj    

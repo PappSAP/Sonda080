@@ -13,7 +13,12 @@ as select  from I_Country
 
 {
 @ObjectModel.text.element: [ 'CountryName' ]
+@UI.textArrangement: #TEXT_FIRST
+
     key Country,
     _Text[1: Language = $session.system_language].CountryName as CountryName
   }
-where Country = 'US' or Country = 'IN' or Country = 'AU' or Country = 'DE'
+where ( Country = 'AR'  ) 
+   or ( Country = 'BR'  ) 
+   or ( Country = 'CL'  ) 
+   or ( Country = 'UY'  )

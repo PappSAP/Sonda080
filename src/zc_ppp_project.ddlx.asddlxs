@@ -26,11 +26,18 @@ annotate entity ZCV_PPP_PROJECT with
 @UI.identification: [{ position: 30 }]
 @EndUserText: { label: 'Nombre del proyecto' }
  ProjectName;
- 
-@UI.lineItem: [{ position: 40 }] 
+
+@UI.lineItem: [{ position: 40, criticality: 'ProjectTypeNivel'}] 
 @UI.identification: [{ position: 40 }]
 @EndUserText: { label: 'Tipo de Proyecto' }
+@UI.textArrangement: #TEXT_ONLY
  ProjectType;
+
+//@UI.lineItem: [{ position: 32 }] 
+//@UI.identification: [{ position: 32 }]
+//@EndUserText: { label: 'Descripción' }
+//ProjectTypeTexto;
+
 
 @UI.lineItem: [{ position: 50 }] 
 @UI.identification: [{ position: 50 }]

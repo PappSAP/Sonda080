@@ -19,7 +19,10 @@ composition [1..*] of ZCV_PPP_SKILL as _skill
     key Id,
     key Projid,
     ProjectName,
+    @ObjectModel.text.element: [ 'ProjectTypeTexto' ]
     ProjectType,
+    ProjectTypeTexto,
+    ProjectTypeNivel,       
     IsCurrent,
     Duration,
     

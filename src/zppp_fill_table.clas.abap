@@ -37,7 +37,7 @@ CLASS zppp_fill_table IMPLEMENTATION.
     DELETE FROM zdbppp_address.
     INSERT zdbppp_address FROM @( VALUE #( id = 101 street  = 'Calle 101' city =  'Santiago' country =  'CL' ) ).
     INSERT zdbppp_address FROM @( VALUE #( id = 102 street  = 'Calle 102' city =  'Temuco' country =  'CL' ) ).
-    INSERT zdbppp_address FROM @( VALUE #( id = 103 street  = 'Calle 103' city =  'Montevideo' country =  'UR' ) ).
+    INSERT zdbppp_address FROM @( VALUE #( id = 103 street  = 'Calle 103' city =  'Montevideo' country =  'UY' ) ).
     INSERT zdbppp_address FROM @( VALUE #( id = 104 street  = 'Calle 104' city =  'San Pablo' country =  'BR' ) ).
     INSERT zdbppp_address FROM @( VALUE #( id = 105 street  = 'Calle 105' city =  'San Pablo' country =  'BR' ) ).
     INSERT zdbppp_address FROM @( VALUE #( id = 106 street  = 'Calle 106' city =  'San Pablo' country =  'BR' ) ).
@@ -70,19 +70,19 @@ CLASS zppp_fill_table IMPLEMENTATION.
 
     DELETE FROM zdbppp_project.
     INSERT zdbppp_project FROM @( VALUE #( id = 101 projid = 'PRJ_45001' project_name = 'Pryecto 45001'  project_type = 'TI'  is_current = 'X' duration = 1 ) ).
-    INSERT zdbppp_project FROM @( VALUE #( id = 101 projid = 'PRJ_45002' project_name = 'Pryecto 45002'  project_type = 'CMP' is_current = 'X' duration = 2 ) ).
+    INSERT zdbppp_project FROM @( VALUE #( id = 101 projid = 'PRJ_45002' project_name = 'Pryecto 45002'  project_type = 'COM' is_current = 'X' duration = 2 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 101 projid = 'PRJ_45003' project_name = 'Pryecto 45003'  project_type = 'INV' is_current = '' duration = 2 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 102 projid = 'PRJ_45004' project_name = 'Pryecto 45004'  project_type = 'MEJ' is_current = 'X' duration = 1 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 102 projid = 'PRJ_45005' project_name = 'Pryecto 45005'  project_type = 'TI'  is_current = ' ' duration = 1 ) ).
-    INSERT zdbppp_project FROM @( VALUE #( id = 103 projid = 'PRJ_45006' project_name = 'Pryecto 45006'  project_type = 'CMP' is_current = 'X' duration = 2 ) ).
+    INSERT zdbppp_project FROM @( VALUE #( id = 103 projid = 'PRJ_45006' project_name = 'Pryecto 45006'  project_type = 'COM' is_current = 'X' duration = 2 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 104 projid = 'PRJ_45007' project_name = 'Pryecto 45007'  project_type = 'INV' is_current = 'X' duration = 2 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 104 projid = 'PRJ_45008' project_name = 'Pryecto 45008'  project_type = 'MEJ' is_current = '' duration = 2 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 105 projid = 'PRJ_45009' project_name = 'Pryecto 45009'  project_type = 'TI'  is_current = 'X' duration = 3 ) ).
-    INSERT zdbppp_project FROM @( VALUE #( id = 110 projid = 'PRJ_45010' project_name = 'Pryecto 45010'  project_type = 'CMP' is_current = 'X' duration = 3 ) ).
+    INSERT zdbppp_project FROM @( VALUE #( id = 110 projid = 'PRJ_45010' project_name = 'Pryecto 45010'  project_type = 'COM' is_current = 'X' duration = 3 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 110 projid = 'PRJ_45011' project_name = 'Pryecto 45011'  project_type = 'INV' is_current = '' duration = 3 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 111 projid = 'PRJ_45012' project_name = 'Pryecto 45012'  project_type = 'MEJ' is_current = 'X' duration = 1 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 111 projid = 'PRJ_45013' project_name = 'Pryecto 45013'  project_type = 'TI'  is_current = '' duration = 1 ) ).
-    INSERT zdbppp_project FROM @( VALUE #( id = 115 projid = 'PRJ_45014' project_name = 'Pryecto 45014'  project_type = 'CMP' is_current = 'X' duration = 1 ) ).
+    INSERT zdbppp_project FROM @( VALUE #( id = 115 projid = 'PRJ_45014' project_name = 'Pryecto 45014'  project_type = 'COM' is_current = 'X' duration = 1 ) ).
     INSERT zdbppp_project FROM @( VALUE #( id = 115 projid = 'PRJ_45015' project_name = 'Pryecto 45015'  project_type = 'INV' is_current = 'X' duration = 1 ) ).
 
     DELETE FROM zdbppp_skill.
@@ -101,6 +101,14 @@ CLASS zppp_fill_table IMPLEMENTATION.
     INSERT zdbppp_skill FROM @( VALUE #( id = 110 projid = 'PRJ_45013' skillid = 'SD'  skill_level = 'l2' is_primary = '' is_certified =  '' ) ).
     INSERT zdbppp_skill FROM @( VALUE #( id = 114 projid = 'PRJ_45014' skillid = 'MM'  skill_level = 'l3' is_primary = '' is_certified =  '' ) ).
     INSERT zdbppp_skill FROM @( VALUE #( id = 115 projid = 'PRJ_45015' skillid = 'SD'  skill_level = 'l3' is_primary = 'X' is_certified = 'X' ) ).
+
+    DELETE FROM zdbppp_country.
+    INSERT zdbppp_country FROM @( VALUE #( country = 'AR' logo_url = 'https://github.com/hampusborgos/country-flags/blob/main/svg/sx.svg') ).
+    INSERT zdbppp_country FROM @( VALUE #( country = 'BR' logo_url = 'https://github.com/hampusborgos/country-flags/blob/main/svg/sx.svg') ).
+    INSERT zdbppp_country FROM @( VALUE #( country = 'CL' logo_url = 'https://github.com/hampusborgos/country-flags/blob/main/svg/sx.svg') ).
+    INSERT zdbppp_country FROM @( VALUE #( country = 'UY' logo_url = 'https://github.com/hampusborgos/country-flags/blob/main/svg/sx.svg') ).
+
+
 
     COMMIT WORK.
     out->write( |Se generó registro para tablas ADDRESS, CONTACT, EMPLEADOS, PROJECT, SKILL. | ).
